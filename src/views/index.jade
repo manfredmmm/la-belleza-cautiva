@@ -1,48 +1,11 @@
-body
-  header
-    h1 La belleza cautiva
-    h2 Pequeños tesoros del museo del prado
-  
-  main
-    ul
-      li
-        span image1
-      li
-        span image2
-      li
-        span image3
-      li
-        span image4
-      li
-        span image5
-
-    h3 Aina Clotet se ha dejado cautivar por la belleza de algunas de estas pequeñas grandes obras y te lo cuenta en cinco vídeos exclusivos.
-    h4 Y a ti, ¿qué te cautiva de la belleza?
-    p Introduce tus datos y recibirás el enlace para verlos
-
-    form(action="MAILTO:someone@example.com" method="post" enctype="text/plain")
-      input(type="text" name="name" placeholder="Nombre y apellidos")
-      input(type="text" name="mail" placeholder="E-mail")
-      input(type="submit" value="Recibir enlace")
-
-    ul
-      li
-        span Compartir
-      li
-        span Facebook
-      li
-        span Twitter
-      li
-        span Email
-
-    p Exposición coorganizada por el Museo Nacional del Prado y la Obra Social "la Caixa"
-    ul
-      li
-        span Gobierno de España
-      li
-        span Ministerio de educación
-      li
-        span Museo nacional el prado
-  footer
-    p La belleza cautiva. Pequeños tesoros del Museo del Prado. En CaixaForum Barcelona, hasta el 5 de enero de 2015. <a href="http://berepublic.com" target="_blank">Más información.</a>
-    p © Fundación Bancaria Caja de Ahorros y Pensiones de Barcelona, ”la Caixa”. Todos los derechos reservados. 
+doctype html
+html
+  include head
+  body
+    header.tac
+      include header
+    main
+      include main
+    footer.tac
+      include footer
+      link(rel="stylesheet" href="/css/application.css")
