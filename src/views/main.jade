@@ -1,40 +1,45 @@
-ul
+ul.slideshow
   li
-    span image1
-  li
-    span image2
-  li
-    span image3
-  li
-    span image4
-  li
-    span image5
+    img(src="/images/aina-clotet/aina-2.jpg" alt="Aina Clotet")
+  //li
+  //  img(src="/images/aina-clotet/aina-2.jpg" alt="Aina Clotet")
+  //li
+  //  img(src="/images/aina-clotet/aina-2.jpg" alt="Aina Clotet")
+  //li
+  //  img(src="/images/aina-clotet/aina-2.jpg" alt="Aina Clotet")
+  //li
+  //  img(src="/images/aina-clotet/aina-2.jpg" alt="Aina Clotet")
+  //li
+  //  img(src="/images/aina-clotet/aina-2.jpg" alt="Aina Clotet")
 
-h3.darkest-grey Aina Clotet se ha dejado cautivar por la belleza de algunas de estas pequeñas grandes obras y te lo cuenta en cinco vídeos exclusivos.
-h4.orange Y a ti, ¿qué te cautiva de la belleza?
-p.darkest-grey Introduce tus datos y recibirás el enlace para verlos
+.content
+  h3.darkest-grey.fs-18
+    span.orange.u-bold Aina Clotet 
+    span se ha dejado cautivar por la belleza de algunas de estas pequeñas grandes obras y te lo cuenta en cinco vídeos exclusivos.
+  h4.orange.fs-26.u-bold Y a ti, ¿qué te cautiva de la belleza?
+  p.darkest-grey.fs-18 Introduce tus datos y recibirás el enlace para verlos:
 
-form(action="MAILTO:someone@example.com" method="post" enctype="text/plain")
-  input.light-grey(type="text" name="name" placeholder="Nombre y apellidos")
-  input.light-grey(type="text" name="mail" placeholder="E-mail")
-  input.grey(type="checkbox" name="check" value="Declaro que he leído las condiciones y las acepto.")
-  input(type="submit" value="Recibir enlace")
+  form(action="MAILTO:manfredmiravitllasmas@gmail.com" method="post" enctype="text/plain")
+    input.light-grey.fs-17.name(type="text" name="name" placeholder="Nombre y apellidos")
+    input.light-grey.fs-17.u-italic.email(type="text" name="mail" placeholder="E-mail")
+    input#read.grey(type="checkbox" name="check")
+    label.grey.fs-15(for="read") Declaro que he leído las <a class="orange u-bold" href=http://google.es">condiciones</a> y las acepto.
+    input.white.bg-orange.fs-20.u-bold(type="submit" value="Recibir enlace")
 
-ul
-  li
-    span Compartir
-  li
-    i.fa.fa-facebook
-  li
-    i.fa.fa-twitter
-  li
-    i.fa.fa-envelope-o
+  ul.share-icons
+    li.share
+      span.dark-grey.fs-14 Compartir
+    li
+      a.orange(href="http://facebook.com" target="_blank")
+        i.fa.fa-facebook
+    li
+      a.orange(href="http://twitter.com" target="_blank")
+        i.fa.fa-twitter
+    li
+      a.orange(href="http://google.com" target="_blank")
+        i.fa.fa-envelope-o
 
-p Exposición coorganizada por el Museo Nacional del Prado y la Obra Social "la Caixa"
-ul
-  li
-    span Gobierno de España
-  li
-    span Ministerio de educación
-  li
-    span Museo nacional el prado
+  p.black.fs-14 Exposición coorganizada por el Museo Nacional del Prado y la Obra Social "la Caixa"
+
+  a(href="https://www.museodelprado.es/aprende/enciclopedia" target="_blank")
+    img(src="/images/logos/museo-nacional-del-prado.png" alt="Museo Nacional del Prado, Ministerio de educación, cultura y deporte")
