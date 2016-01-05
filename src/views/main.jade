@@ -11,11 +11,15 @@ picture.slideshow
   h4.orange.fs-26.u-bold Y a ti, ¿qué te cautiva de la belleza?
   p.darkest-grey.fs-18 Introduce tus datos y recibirás el enlace para verlos:
 
-  form(action="MAILTO:manfredmiravitllasmas@gmail.com" method="post" enctype="text/plain")
+  form(action="MAILTO:manfredmiravitllasmas@gmail.com" method="post" enctype="text/plain" autocomplete="off")
     input.light-grey.fs-17.name(type="text" name="name" placeholder="Nombre y apellidos")
     input.light-grey.fs-17.u-italic.email(type="text" name="mail" placeholder="E-mail")
     input#read.grey(type="checkbox" name="check")
-    label.grey.fs-15(for="read") Declaro que he leído las <a class="orange u-bold" href="http://berepublic.com" target="_blank">condiciones</a> y las acepto.
+    label.grey.fs-15(for="read")
+      .checkbox
+        svg.tick(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="#737373")
+          path(d="M448,71.9c-17.3-13.4-41.5-9.3-54.1,9.1L214,344.2l-99.1-107.3c-14.6-16.6-39.1-17.4-54.7-1.8  c-15.6,15.5-16.4,41.6-1.7,58.1c0,0,120.4,133.6,137.7,147c17.3,13.4,41.5,9.3,54.1-9.1l206.3-301.7  C469.2,110.9,465.3,85.2,448,71.9z")
+      span Declaro que he leído las <a class="orange u-bold" href="http://berepublic.com" target="_blank">condiciones</a> y las acepto.
     input.white.bg-orange.fs-20.u-bold(type="submit" value="Recibir enlace")
 
   ul.share-icons

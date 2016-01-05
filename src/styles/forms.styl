@@ -21,9 +21,7 @@ input[type="text"]
     background-repeat no-repeat
     background-position 2px -44px
 input[type="checkbox"]
-  margin-bottom 45px
-  margin-right 13px
-  border 1px solid orange
+  display none
 input[type="submit"]
   center(250px)
   border-radius 100px
@@ -33,8 +31,32 @@ input[type="submit"]
   padding 14px 0
   margin-bottom 42px
   cursor pointer
-  transition-duration .4s
+  &:hover,
+  &:active
+    transition-duration .4s
   &:hover
     background-color darken(orange, 10%)
   &:active
     box-shadow inset 0 0 10px darken(orange, 40%)
+label.grey
+  display block
+  margin-bottom 45px
+input[type="checkbox"] + label .checkbox
+  position relative
+  top 4px
+  display inline-block
+  width 18px
+  height 18px
+  background-color white
+  border 1px solid orange
+  border-radius 2px
+  margin-right 13px
+input[type="checkbox"]:checked + label .checkbox
+  svg.tick
+    opacity 1
+svg.tick
+  position absolute
+  top 0
+  left 0
+  opacity 0
+  transition-duration .3s
