@@ -18,7 +18,6 @@ input[type="text"]
     background-position 0 -3px
   &.email
     padding 9px 13px 9px 49px
-    margin-right 0
     background-image url("/images/icons-sprite.png")
     background-repeat no-repeat
     background-position 4px -44px
@@ -62,3 +61,11 @@ svg.tick
   left 0
   opacity 0
   transition-duration .3s
+@media mobile
+  input[type="text"]
+    col(1)
+    center(95%)
+@media tablet-desktop
+  input[type="text"]
+    &.email
+      margin-right 0
