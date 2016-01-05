@@ -1,12 +1,26 @@
 main
   padding 63px 0 37px 0
+section.images
+  position relative
 picture.slideshow
   center(960px)
   margin-bottom 30px
   img,
   source
     width 99%
-.content
+.player-window
+  position absolute
+  width 45px
+  height 45px
+  top 35%
+  left calc(50% - 22px)
+  overflow hidden
+img.play
+  position absolute
+  top -190px
+  left calc(50% - 29px)
+  width 60px
+section.content
   center(600px)
 h3
   margin-bottom 20px
@@ -16,15 +30,33 @@ p
   margin-bottom 12px
 ul.share-icons
   margin-bottom 36px
+  display flex
+  align-items center
+  justify-content center
   li
     margin-right 10px
     display inline-block
     line-height 29px
+    transition-duration .3s
   li:not(.share)
     border 1px solid orange
     border-radius 100px
     width 30px
     height 30px
     margin-right 5px
+  li:last-child
+    margin-right 0
+  li:hover
+    background-color rgba(white, .6)
   a
     display block
+    width 100%
+    height 100%
+    position relative
+    overflow hidden
+  img.email
+    position absolute
+    display inline-block
+    top -52px
+    left 1px
+    width 95%

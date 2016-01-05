@@ -1,10 +1,13 @@
-picture.slideshow
-  source(srcset="/images/aina-clotet/aina-clotet-museo-nacional-prado-375px.png" media="(max-width: 375px)" alt="Aina Clotet cautivada por las obras del Museo del Prado")
-  source(srcset="/images/aina-clotet/aina-clotet-museo-nacional-prado-667px.png" media="(max-width: 667px)" alt="Aina Clotet cautivada por las obras del Museo del Prado")
-  source(srcset="/images/aina-clotet/aina-clotet-museo-nacional-prado-768px.png" media="(max-width: 768px)" alt="Aina Clotet cautivada por las obras del Museo del Prado")
-  img(src="/images/aina-clotet/aina-clotet-museo-nacional-prado.png" alt="Aina Clotet cautivada por las obras del Museo del Prado")
+section.images
+  picture.slideshow
+    source(srcset="/images/aina-clotet/aina-clotet-museo-nacional-prado-375px.png" media="(max-width: 375px)" alt="Aina Clotet cautivada por las obras del Museo del Prado" title="Aina Clotet cautivada por las obras del Museo del Prado")
+    source(srcset="/images/aina-clotet/aina-clotet-museo-nacional-prado-667px.png" media="(max-width: 667px)" alt="Aina Clotet cautivada por las obras del Museo del Prado" title="Aina Clotet cautivada por las obras del Museo del Prado")
+    source(srcset="/images/aina-clotet/aina-clotet-museo-nacional-prado-768px.png" media="(max-width: 768px)" alt="Aina Clotet cautivada por las obras del Museo del Prado" title="")
+    img(src="/images/aina-clotet/aina-clotet-museo-nacional-prado.png" alt="Aina Clotet cautivada por las obras del Museo del Prado" title="Aina Clotet cautivada por las obras del Museo del Prado")
+  .player-window(title="Rellena el formulario para poder ver los vídeos")
+    img.play(src="/images/icons-sprite.png" alt="Rellena el formulario para poder ver los vídeos")
 
-.content
+section.content
   h3.darkest-grey.fs-18
     span.orange.u-bold Aina Clotet 
     span se ha dejado cautivar por la belleza de algunas de estas pequeñas grandes obras y te lo cuenta en cinco vídeos exclusivos.
@@ -33,7 +36,7 @@ picture.slideshow
         i.fa.fa-twitter
     li
       a.orange(href="http://google.com" target="_blank")
-        i.fa.fa-envelope-o
+        img.email(src="/images/icons-sprite.png")
 
   p.black.fs-14 Exposición coorganizada por el Museo Nacional del Prado y la Obra Social "la Caixa"
 
