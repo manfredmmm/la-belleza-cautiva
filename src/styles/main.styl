@@ -1,15 +1,19 @@
 main
   padding 63px 0 37px 0
 ul.slideshow
+  center(960px)
   margin-bottom 46px
-  img
-    width 345px
-    height 185px
-  img:not(.centered)
-    width 157px
-    height 150px
+  display flex
+  align-items center
+  justify-content center
   li
-    display inline
+    display inline-block
+  img.centered
+    width 345px
+  img.middle
+    width 148px
+  img.bottom
+    width 158px
 .content
   center(600px)
 h3
