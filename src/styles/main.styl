@@ -1,50 +1,50 @@
 main
-  padding 63px 0 37px 0
+  padding rem(63 0 37 0)
 section.images
   position relative
 picture.slideshow
   center(960px)
-  margin-bottom 30px
+  margin-bottom rem(30)
   img,
   source
-    width 99%
+    width 98%
 .player-window
   position absolute
-  width 45px
-  height 45px
-  top 35%
-  left calc(50% - 22px)
+  width 36px
+  height 28px
+  top rem(80)
+  left calc(50% - 18px)
   overflow hidden
 img.play
   position absolute
-  top -190px
-  left calc(50% - 29px)
+  top rem(-196)
+  left calc(50% - 30px)
   width 60px
 section.content
   center(600px)
 h2
-  margin-bottom 20px
+  margin-bottom rem(20)
   line-height 1.25em
 h3
-  margin-bottom 30px
+  margin-bottom rem(30)
 p
-  margin-bottom 12px
+  margin-bottom rem(12)
 ul.share-icons
-  margin-bottom 36px
+  margin-bottom rem(36)
   display flex
   align-items center
   justify-content center
   li
-    margin-right 10px
+    margin-right rem(10)
     display inline-block
-    line-height 29px
+    line-height rem(29)
     transition-duration .3s
   li:not(.share)
     border 1px solid orange
     border-radius 100px
     width 30px
     height 30px
-    margin-right 5px
+    margin-right rem(5)
   li:last-child
     margin-right 0
   li:hover:not(.share)
@@ -58,9 +58,22 @@ ul.share-icons
   img.email
     position absolute
     display inline-block
-    top -52px
+    top rem(-52)
     left 1px
     width 95%
+a.prado
+  width 58.5%
+  max-width 351px
+  display inline-block
+  img
+    width 100%
 @media mobile
   section.content
     center(90%)
+  section.images
+    .player-window
+      top 30%
+@media tablet
+  section.images
+    .player-window
+      top 38%

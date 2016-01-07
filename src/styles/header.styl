@@ -1,26 +1,32 @@
 .logos
-  padding 13px 0 14px 0
   center(1000px)
+  padding rem(13 0 14 0)
   a
     display inline-block
   img
     width 100%
 a.top
   position relative
-  left -22px
 a.caixa
   max-width 258px
   width 26.8%
+  left rem(-22)
 a.forum
   max-width 212px
   width 20%
 .banner
-  padding 30px 0
+  padding rem(30 0)
   img
-    width 48%
+    max-width 531px
+    width 53.10%
     min-width 280px
 h1
   display none
 @media max1060
-  a.top
+  a.caixa
     left 0
+@media mobile-tablet
+  a.caixa
+    left 5px
+  a.forum
+    right 5px

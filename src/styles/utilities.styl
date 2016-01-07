@@ -1,0 +1,50 @@
+$rem-base = 16px;
+@media mobile
+  $rem-base = 14px;
+$modules ?= ();
+exports($name) {
+  if (($name in $modules) == false) {
+    append($modules, $name);
+    {block}
+  }
+}
+
+nth($hash, $index) {
+  return $hash[$index];
+}
+
+strip-unit($num) {
+  return remove-unit($num);
+}
+
+convert-to-rem($value, $base-value = $rem-base)  {
+  if (typeof($value) == 'unit') {
+    if (unit($value) == '') {
+      $value = $value * 1px;
+    }
+
+    if (unit($value) == 'px') {
+      $value = strip-unit($value) / strip-unit($base-value);
+
+      if ($value != 0) {
+        $value = $value * 1rem;
+      }
+    }
+  }
+
+  return $value;
+}
+
+rem($values, $base-value = $rem-base) {
+  $max = length($values);
+
+  if $max == 1 {
+    return convert-to-rem(nth($values, 0), $base-value); }
+
+  $remValues = ();
+  for $i in (0...$max){
+    push($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+
+  return $remValues;
+}
