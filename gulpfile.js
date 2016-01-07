@@ -11,13 +11,12 @@ var gulp         = require('gulp'),
     jeet         = require('jeet'),
     autoprefixer = require('autoprefixer-stylus'),
     STYL_FILES   = ['src/styles/**/*.styl'],
-    JS_FILES     = ['src/js/**/*.js'],
     JADE_FILES   = ['src/views/**/*.jade'],
     PUBLIC_FILES = ['public/**/*'],
     ENV          = process.env.NODE_ENV || 'development';
 
 gulp.task('clean', function () {
-    return gulp.src(['public/*.html', 'public/css', 'public/js'], { read: false })
+    return gulp.src(['public/*.html', 'public/css'], { read: false })
         .pipe(plumber())
         .pipe(rimraf())
 });
@@ -26,7 +25,7 @@ gulp.task('views', function () {
     gulp.src(JADE_FILES)
         .pipe(plumber())
         .pipe(jade({
-            pretty: ENV === 'development' 
+            pretty: ENV === 'development'
         }))
         .pipe(gulp.dest('public'));
 });
@@ -35,6 +34,16 @@ gulp.task('urlFallback', function () {
     gulp.src('public/index.html')
         .pipe(plumber())
         .pipe(gulp.dest('public'))
+});
+
+gulp.task('images', function () {
+    gulp.src(['src/images/**/*'])
+        .pipe(gulp.dest('public/images'));
+});
+
+gulp.task('fonts', function () {
+    gulp.src(['src/fonts/*'])
+        .pipe(gulp.dest('public/fonts'));
 });
 
 gulp.task('styles', function () {
@@ -50,21 +59,10 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('js', function () {
-    return gulp.src([
-        'assets/js/application.js'
-    ])
-    .pipe(plumber())
-    .pipe(concat('application.js'))
-    .pipe(gulpIf(ENV === 'production', uglify()))
-    .pipe(gulp.dest('public/js'));
-});
-
 gulp.task('watch', function () {
     gulp.watch(JADE_FILES, ['views']);
     gulp.watch(PUBLIC_FILES, ['reload']);
     gulp.watch(STYL_FILES, ['styles']);
-    gulp.watch(JS_FILES, ['js']);
 });
 
 gulp.task('connect', function () {
@@ -80,5 +78,5 @@ gulp.task('reload', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('build', ['views', 'styles', 'js']);
-gulp.task('default', ['build', 'watch', 'connect']);
+gulp.task('build', ['views', 'styles']);
+gulp.task('default', ['build', 'watch', 'connect', 'images', 'fonts']);
