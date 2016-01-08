@@ -4,3 +4,5 @@ public/css
 public/*.html
 public/fonts
 public/images
+public/js
+bower_components

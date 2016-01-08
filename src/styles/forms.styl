@@ -1,28 +1,32 @@
-form
+.row
   cf()
-input[type="text"]
-  col(1/2)
+input[type="text"],
+input[type="email"]
   appearance none
   box-shadow none
   border-radius none
   outline none
   font-family type-arial
+  width 100%
+  margin-bottom rem(8)
   border 1px solid orange
   border-radius 2px
   text-align left
-  margin-bottom rem(20)
   &.name
-    padding rem(9px 13px 9px 49px)
     background-image url("/images/icons-sprite.png")
     background-repeat no-repeat
     background-position 0 -3px
-  &.email
     padding rem(9px 13px 9px 49px)
+  &.email
     background-image url("/images/icons-sprite.png")
     background-repeat no-repeat
     background-position 4px -44px
+    padding rem(9px 13px 9px 49px)
 input[type="checkbox"]
-  display none
+  opacity 0
+  position relative
+  left 23px
+  top -1px
 input[type="submit"]
   appearance none
   border none
@@ -40,11 +44,10 @@ input[type="submit"]
     background-color darken(orange, 10%)
   &:active
     box-shadow inset 0 0 10px darken(orange, 40%)
-label.grey
-  display block
+label
+  display inline-block
   margin-bottom rem(45)
   line-height 1.6
-  cursor pointer
 input[type="checkbox"] + label .checkbox
   position relative
   top 4px
@@ -64,16 +67,30 @@ svg.tick
   left 0
   opacity 0
   transition-duration .3s
+input[type="submit"]:disabled
+  transition-duration .4s
+  cursor default
+  background-color rgba(orange, .75)
+p.hint
+  margin-bottom 0
+p.submitted
+  margin-bottom rem(10)
 @media mobile
-  input[type="text"]
+  .email-field,
+  .name-field
     center(95%)
-    width 100%
+    margin-bottom rem(20px)
+  input[type="text"],
+  input[type="email"]
     text-align left
     &.name
       background-position 4px -5px
     &.email
       background-position 4px -45px
 @media tablet-desktop
-  input[type="text"]
-    &.email
-      margin-right 0
+  .name-field,
+  .email-field
+    col(1/2)
+    margin-bottom rem(20)
+  .email-field
+    margin-bottom 0

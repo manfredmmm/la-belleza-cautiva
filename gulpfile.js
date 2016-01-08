@@ -12,11 +12,12 @@ var gulp         = require('gulp'),
     autoprefixer = require('autoprefixer-stylus'),
     STYL_FILES   = ['src/styles/**/*.styl'],
     JADE_FILES   = ['src/views/**/*.jade'],
+    JS_FILES     = ['src/js/**/*.js'],
     PUBLIC_FILES = ['public/**/*'],
     ENV          = process.env.NODE_ENV || 'development';
 
 gulp.task('clean', function () {
-    return gulp.src(['public/*.html', 'public/css'], { read: false })
+    return gulp.src(['public/*.html', 'public/css', 'public/js'], { read: false })
         .pipe(plumber())
         .pipe(rimraf())
 });
@@ -59,10 +60,22 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('js', function () {
+    return gulp.src([
+        'bower_components/angular/angular.js',
+        'src/js/*.js'
+    ])
+    .pipe(plumber())
+    .pipe(concat('application.js'))
+    .pipe(gulpIf(ENV === 'production', uglify()))
+    .pipe(gulp.dest('public/js'));
+});
+
 gulp.task('watch', function () {
     gulp.watch(JADE_FILES, ['views']);
     gulp.watch(PUBLIC_FILES, ['reload']);
     gulp.watch(STYL_FILES, ['styles']);
+    gulp.watch(JS_FILES, ['js']);
 });
 
 gulp.task('connect', function () {
@@ -78,5 +91,5 @@ gulp.task('reload', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('build', ['views', 'styles']);
+gulp.task('build', ['views', 'styles', 'js']);
 gulp.task('default', ['build', 'watch', 'connect', 'images', 'fonts']);
