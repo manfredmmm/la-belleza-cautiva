@@ -1,12 +1,12 @@
 doctype html
 html
   include head
-  body.bg-white(ng-app="app" ng-strict-di)
-    .header
+  body.bg-white
+    header
       include header
-    .main.bg-pattern.tac
+    section.main.bg-pattern.tac
       include main
-    .footer.tac
+    footer.tac
       include footer
       link(rel="stylesheet" href="/css/application.css" property="stylesheet")
       script(src="/js/application.js")

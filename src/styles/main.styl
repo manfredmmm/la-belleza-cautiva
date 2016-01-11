@@ -1,7 +1,9 @@
-.main
+section.main
   padding rem(63 0 37 0)
-.images
+section.images
   position relative
+  h2
+    display none
 picture.slideshow
   center(960px)
   margin-bottom rem(30)
@@ -20,7 +22,7 @@ img.play
   top rem(-196)
   left calc(50% - 30px)
   width 60px
-.content
+section.content
   center(600px)
 h2
   margin-bottom rem(20)
@@ -71,12 +73,12 @@ a.prado
   img
     width 100%
 @media mobile
-  .content
+  section.content
     center(90%)
-  .images
+  section.images
     .player-window
       top 30%
 @media tablet
-  .images
+  section.images
     .player-window
       top 38%
