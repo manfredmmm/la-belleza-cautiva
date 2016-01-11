@@ -17,7 +17,7 @@ strip-unit($num) {
   return remove-unit($num);
 }
 
-convert-to-rem($value, $base-value = $rem-base)  {
+convert-to-em($value, $base-value = $rem-base)  {
   if (typeof($value) == 'unit') {
     if (unit($value) == '') {
       $value = $value * 1px;
@@ -27,7 +27,7 @@ convert-to-rem($value, $base-value = $rem-base)  {
       $value = strip-unit($value) / strip-unit($base-value);
 
       if ($value != 0) {
-        $value = $value * 1rem;
+        $value = $value * 1em;
       }
     }
   }
@@ -39,11 +39,11 @@ rem($values, $base-value = $rem-base) {
   $max = length($values);
 
   if $max == 1 {
-    return convert-to-rem(nth($values, 0), $base-value); }
+    return convert-to-em(nth($values, 0), $base-value); }
 
   $remValues = ();
   for $i in (0...$max){
-    push($remValues, convert-to-rem(nth($values, $i), $base-value));
+    push($remValues, convert-to-em(nth($values, $i), $base-value));
   }
 
   return $remValues;
